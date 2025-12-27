@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BubbleJoy | Fresh Boba Tea</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="boba.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <span class="logo-circle">B</span> <span class="fw-bold text-dark-purple">BubbleJoy</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-outline-dark rounded-pill px-4" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart me-2"></i> Cart (<span id="cart-count">0</span>)
+            </button>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold mb-3">Fresh <span class="text-purple">Boba Tea</span><br>Made with Love
+                    </h1>
+                    <p class="lead text-muted mb-4">Discover our handcrafted bubble tea with premium ingredients, fresh
+                        fruit, and perfectly chewy tapioca pearls.</p>
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-purple btn-lg shadow-sm">Order Now</button>
+                        <button class="btn btn-outline-secondary btn-lg rounded-3">View Menu</button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <img src="images/hero.svg" class="img-fluid rounded-5 shadow-lg" alt="Boba Tea Cups">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-2">Our Delicious Menu</h2>
+            <p class="text-center text-muted mb-5">From classic milk teas to innovative fruit blends, we have something
+                for every taste bud.</p>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0">
+                        <div class="position-relative">
+                            <span class="badge bg-orange position-absolute m-3">Popular</span>
+                            <span
+                                class="badge bg-white text-dark position-absolute top-0 end-0 m-3 shadow-sm">Classic</span>
+                            <img src="images/classic.svg" class="card-img-top" alt="Classic Milk Tea">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Classic Milk Tea</h5>
+                                <span class="text-purple fw-bold fs-5">$5.50</span>
+                            </div>
+                            <p class="card-text text-muted small mb-4">Traditional black tea with creamy milk and
+                                tapioca pearls</p>
+                            <button class="btn btn-purple w-100 add-to-cart" data-name="Classic Milk Tea"
+                                data-price="5.50" data-img="images/classic.svg">+
+                                Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0">
+                        <div class="position-relative">
+                            <span
+                                class="badge bg-light text-dark position-absolute top-0 end-0 m-3 shadow-sm">Smoothie</span>
+                            <img src="images/taro.svg" class="card-img-top" alt="Taro Smoothie">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Taro Smoothie</h5>
+                                <span class="text-purple fw-bold fs-5">$6.25</span>
+                            </div>
+                            <p class="card-text text-muted small mb-4">Creamy taro root blended with milk and ice,
+                                topped with taro pearls</p>
+                            <button class="btn btn-purple w-100 add-to-cart" data-name="Taro Smoothie" data-price="6.25"
+                                data-img="images/taro.svg">+
+                                Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0">
+                        <div class="position-relative">
+                            <span class="badge bg-orange position-absolute m-3">Popular</span>
+                            <span
+                                class="badge bg-white text-dark position-absolute top-0 end-0 m-3 shadow-sm">Tea</span>
+                            <img src="images/matcha.svg" class="card-img-top" alt="Matcha Latte">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Matcha Latte</h5>
+                                <span class="text-purple fw-bold fs-5">$6.00</span>
+                            </div>
+                            <p class="card-text text-muted small mb-4">Premium Japanese matcha powder with steamed milk
+                                and honey</p>
+                            <button class="btn btn-purple w-100 add-to-cart" data-name="Matcha Latte" data-price="6.00"
+                                data-img="images/matcha.svg">+
+                                Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="col-md-4">
+                    <div class="card h-100 border-0">
+                        <div class="position-relative">
+                            <span class="badge bg-orange position-absolute m-3">Popular</span>
+                            <span
+                                class="badge bg-white text-dark position-absolute top-0 end-0 m-3 shadow-sm">Signature</span>
+                            <img src="images/brown_sugar.svg" class="card-img-top" alt="Brown Sugar Delight">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Brown Sugar Delight</h5>
+                                <span class="text-purple fw-bold fs-5">$6.50</span>
+                            </div>
+                            <p class="card-text text-muted small mb-4">Rich brown sugar syrup with fresh milk and chewy
+                                tapioca</p>
+                            <button class="btn btn-purple w-100 add-to-cart" data-name="Brown Sugar Delight"
+                                data-price="6.50" data-img="images/brown_sugar.svg">+
+                                Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0">
+                        <div class="position-relative">
+                            <span
+                                class="badge bg-white text-dark position-absolute top-0 end-0 m-3 shadow-sm">Fruit</span>
+                            <img src="images/mango.svg" class="card-img-top" alt="Mango Paradise">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="card-title mb-0">Mango Paradise</h5>
+                                <span class="text-purple fw-bold fs-5">$6.25</span>
+                            </div>
+                            <p class="card-text text-muted small mb-4">Fresh mango chunks with jasmine tea and mango
+                                popping pearls</p>
+                            <button class="btn btn-purple w-100 add-to-cart" data-name="Mango Paradise"
+                                data-price="6.25" data-img="images/mango.svg">+
+                                Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-6">
+                    <h2 class="display-5 fw-bold mb-4">About BubbleJoy</h2>
+                    <p class="lead text-muted mb-4">Founded in 2019, BubbleJoy has been serving the finest bubble tea
+                        experience to our community. We believe in using only the freshest ingredients and traditional
+                        brewing methods to create drinks that bring joy to every sip.</p>
+
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="bg-white p-3 rounded-4 shadow-sm me-3">
+                            <i class="fas fa-heart text-purple fs-4"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Made with Love</h5>
+                            <p class="text-muted small mb-0">Every drink is crafted with care and attention to detail.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="bg-white p-3 rounded-4 shadow-sm me-3">
+                            <i class="fas fa-leaf text-success fs-4"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Fresh Ingredients</h5>
+                            <p class="text-muted small mb-0">Premium tea leaves and fresh fruits sourced daily.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/ingredients.svg" class="img-fluid rounded-5 shadow-lg" alt="Tea Ingredients">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="order-cta text-center shadow-lg">
+                <h2 class="display-5 fw-bold mb-3">Ready to Order?</h2>
+                <p class="lead mb-4">Skip the line and order ahead for pickup or delivery</p>
+                <button class="btn btn-light btn-lg px-5 rounded-pill fw-bold text-purple">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-2">Visit Us Today</h2>
+            <p class="text-muted mb-5">Come experience the best bubble tea in town. We can't wait to serve you!</p>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="contact-box shadow-sm">
+                        <i class="fas fa-map-marker-alt text-purple mb-3"></i>
+                        <h5>Location</h5>
+                        <p class="small text-muted mb-0">123 Bubble Street<br>Tea District, TD 12345</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="contact-box shadow-sm">
+                        <i class="fas fa-phone-alt text-success mb-3"></i>
+                        <h5>Phone</h5>
+                        <p class="small text-muted mb-0">(555) 123-BOBA<br>(555) 123-2622</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="contact-box shadow-sm">
+                        <i class="fas fa-clock text-warning mb-3"></i>
+                        <h5>Hours</h5>
+                        <p class="small text-muted mb-0">Mon-Thu: 9AM-9PM<br>Fri-Sun: 9AM-10PM</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="contact-box shadow-sm">
+                        <i class="fas fa-envelope text-primary mb-3"></i>
+                        <h5>Email</h5>
+                        <p class="small text-muted mb-0">hello@bubblejoy.com<br>orders@bubblejoy.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="cartDrawer" class="cart-drawer">
+        <div class="p-4 flex-grow-1 overflow-auto">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="mb-0">Cart (<span id="cart-drawer-count">0</span> items)</h4>
+                <button class="btn-close" onclick="toggleCart()"></button>
+            </div>
+            <div id="cart-items-list">
+                <p class="text-center text-muted py-5">Your cart is empty.</p>
+            </div>
+        </div>
+        <div class="p-4 bg-light border-top">
+            <div class="d-flex justify-content-between fw-bold fs-5 mb-3">
+                <span>Subtotal:</span>
+                <span id="cart-total" class="text-purple">$0.00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-dark w-100 mb-2 py-3 fw-bold">View Full Cart & Checkout →</a>
+            <button class="btn btn-outline-secondary w-100" onclick="toggleCart()">Continue Shopping</button>
+            <p class="text-center small text-muted mt-3 mb-0">Shipping and taxes calculated at checkout</p>
+        </div>
+    </div>
+    <div id="cartOverlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <footer class="text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="d-flex align-items-center">
+                        <span class="logo-circle">B</span> <strong class="fs-4">BubbleJoy</strong>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <div class="d-flex justify-content-center gap-4">
+                        <a href="#home" class="text-white text-decoration-none small">Home</a>
+                        <a href="#menu" class="text-white text-decoration-none small">Menu</a>
+                        <a href="#about" class="text-white text-decoration-none small">About</a>
+                        <a href="#contact" class="text-white text-decoration-none small">Contact</a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <div class="social-links mb-2">
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="small text-white-50">© 2024 BubbleJoy. All rights reserved.</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
